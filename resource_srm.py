@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 
 UPLOAD_FOLDER = 'static/uploads/'
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 captcha_url="https://evarsity.srmist.edu.in/srmwebonline/Captcha"
 name=int(round(time.time() * 1000))        
