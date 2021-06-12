@@ -42,16 +42,7 @@ def home():
 @app.route('/result', methods=['GET', 'POST'])
 def Result():
     if 'regno' in rq.args and 'date' in rq.args and 'month' in rq.args and 'year' in rq.args:
-        cerror = 0
-        berror = 0
-        count = 0
         cookiee, captcha = resource_srm.getCaptcha()
-        caperror = "Invalid Verification Code"
-        bdayerror = "Given Date of Birth is Incorrect"
-        regnoerror = "Given Register Number" + \
-            rq.args.get('regno')+" not available"
-        success = False
-
         headers["Cookie"] = "JSESSIONID="+str(cookiee)
     
 
@@ -68,6 +59,11 @@ def Result():
             "txtYear": txtYear,
             "txtvericode": captcha.replace(" ", "")
         }
+
+        caperror = "Invalid Verification Code"
+        bdayerror = "Given Date of Birth is Incorrect"
+        regnoerror = "Given Register Number" + \
+            rq.args.get('regno')+" not available"
 
         
         result = requests.post(result_url, data=data, headers=headers)
