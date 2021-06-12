@@ -1,0 +1,14 @@
+-i https://pypi.org/simple/
+flask==1.0.2
+pillow==8.2.0
+pytesseract==0.2.6
+requests == 2.25.1
+beautifulsoup4 ==4.9.3
+html5lib ==1.1
+WTForms==2.1
+Werkzeug==2.0.1
+blinker==1.4
+gunicorn==19.4.5
+itsdangerous==0.24
+Jinja2==3.0.1
+MarkupSafe==2.0.1
