@@ -1,1 +1,1 @@
-web: gunicorn -k uvicorn.workers.UvicornWorker main:app --lifespan on
+web: gunicorn -k uvicorn.workers.UvicornWorker main:app --log-file=-
