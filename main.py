@@ -1,9 +1,9 @@
 from flask import Flask
 from flask import request as rq
+from flask import Response
 import requests
 import resource_srm
 import json
-from flask import Response
 
 
 UPLOAD_FOLDER = 'static/uploads/'
@@ -110,4 +110,4 @@ def Result():
 
 
 if __name__ == '__main__':
-    app.run(host ='0.0.0.0', port = 5001,debug=True)
+    app.run(debug=True)
