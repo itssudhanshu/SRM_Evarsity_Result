@@ -6,9 +6,9 @@ from io import StringIO
 import io
 import pytesseract
 # import cv2
-import glob
-import numpy
-import ntpath
+# import glob
+# import numpy
+# import ntpath
 import time
 import requests
 from bs4 import BeautifulSoup
