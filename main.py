@@ -4,6 +4,8 @@ import requests
 import resource_srm
 import json
 from flask import Response
+import uvicorn
+
 
 UPLOAD_FOLDER = 'static/uploads/'
 result_url = "https://evarsity.srmist.edu.in/srmwebonline/exam/onlineResult.jsp"
@@ -109,4 +111,4 @@ def Result():
 
 
 if __name__ == '__main__':
-    app.run(host ='0.0.0.0', port = 5000,debug=True)
+    uvicorn.run(app)
