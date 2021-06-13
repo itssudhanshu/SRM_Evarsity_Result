@@ -1,5 +1,5 @@
 import io
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request as rq
 from flask import Response
 import requests
@@ -10,6 +10,7 @@ try:
     from PIL import Image
 except ImportError:
     import Image
+from werkzeug import secure_filename
 
 
 # UPLOAD_FOLDER = 'static/uploads/'
@@ -40,6 +41,24 @@ headers = {
 
 app = Flask(__name__)
 
+
+@app.errorhandler(404)
+def not_found(error):
+    resp = jsonify( { 
+        u'status': 404, 
+        u'message': u'Resource not found' 
+    } )
+    resp.status_code = 404
+    return resp
+
+@app.errorhandler(500)
+def not_found(error):
+    resp = jsonify( { 
+        u'status': 500, 
+        u'message': u'Resource not found' 
+    } )
+    resp.status_code = 500
+    return resp
 
 @app.route('/')
 def home():
