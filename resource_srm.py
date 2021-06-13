@@ -2,7 +2,6 @@ try:
     from PIL import Image
 except ImportError:
     import Image
-from io import StringIO
 import io
 import pytesseract
 # import cv2
