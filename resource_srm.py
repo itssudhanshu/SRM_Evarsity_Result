@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 # symbols = glob.glob(UPLOAD_FOLDER+'*.jpg')
 # pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 # pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-pytesseract.pytesseract.tesseract_cmd = './vendor/tesseract-ocr/tessdata'
+# pytesseract.pytesseract.tesseract_cmd = './vendor/tesseract-ocr/tessdata'
 
 captcha_url="https://evarsity.srmist.edu.in/srmwebonline/Captcha"
 name=int(round(time.time() * 1000))   
