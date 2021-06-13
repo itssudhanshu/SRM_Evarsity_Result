@@ -13,7 +13,7 @@
         "url": "heroku/python"
       },
       {
-        "url": "https://github.com/lnguyen46/heroku-buildpack-tesseract.git"
+        "url": "https://github.com/heroku/heroku-buildpack-apt"
       }
     ]
   }
