@@ -6,7 +6,7 @@ import resource_srm
 import json
 
 
-UPLOAD_FOLDER = 'static/uploads/'
+# UPLOAD_FOLDER = 'static/uploads/'
 result_url = "https://evarsity.srmist.edu.in/srmwebonline/exam/onlineResult.jsp"
 
 headers = {
@@ -29,7 +29,7 @@ headers = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-app = Flask(__name__)
+app = Flask(__name__)._run_asgi2
 
 
 @app.route('/')
