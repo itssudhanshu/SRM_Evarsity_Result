@@ -1,13 +1,22 @@
+import io
 from flask import Flask
 from flask import request as rq
 from flask import Response
 import requests
 import resource_srm
 import json
+import pytesseract
+try:
+    from PIL import Image
+except ImportError:
+    import Image
 
 
 # UPLOAD_FOLDER = 'static/uploads/'
 result_url = "https://evarsity.srmist.edu.in/srmwebonline/exam/onlineResult.jsp"
+captcha_url="https://evarsity.srmist.edu.in/srmwebonline/Captcha"
+
+pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
 
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36",
@@ -43,7 +52,10 @@ def home():
 @app.route('/result', methods=['GET', 'POST'])
 def Result():
     if 'regno' in rq.args and 'date' in rq.args and 'month' in rq.args and 'year' in rq.args:
-        cookiee, captcha = resource_srm.getCaptcha()
+        cap=requests.get(captcha_url)
+        captcha = pytesseract.image_to_string(Image.open(io.BytesIO(cap.content)))
+        print(cap)
+        cookiee=captcha.cookies['JSESSIONID']
         headers["Cookie"] = "JSESSIONID="+str(cookiee)
     
 
