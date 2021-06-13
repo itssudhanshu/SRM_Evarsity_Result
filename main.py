@@ -29,7 +29,7 @@ headers = {
     "Upgrade-Insecure-Requests": "1"
 }
 
-app = Flask(__name__)._run_asgi2
+app = Flask(__name__)
 
 
 @app.route('/')
