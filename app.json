@@ -1,0 +1,19 @@
+{
+    "name": "SRM EXAMINATION RESULT API WITH PYTHON",
+    "description": "",
+    "keywords": [
+      "Tesseract",
+      "OCR",
+      "Flask"
+    ],
+    "logo": "https://firebasestorage.googleapis.com/v0/b/srm-docker.appspot.com/o/ss2862%40srmist.edu.in?alt=media&token=50b48e87-fffa-4094-9c91-5fcfb729fd18",
+    "success_url": "/",
+    "buildpacks": [
+      {
+        "url": "heroku/python"
+      },
+      {
+        "url": "https://github.com/lnguyen46/heroku-buildpack-tesseract.git"
+      }
+    ]
+  }
