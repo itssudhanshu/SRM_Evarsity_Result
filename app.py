@@ -53,7 +53,7 @@ def Result():
     if 'regno' in rq.args and 'date' in rq.args and 'month' in rq.args and 'year' in rq.args:
         cap=requests.get(captcha_url)
         captcha = pytesseract.image_to_string(Image.open(io.BytesIO(cap.content)))
-        print(cap)
+        print(captcha)
         cookiee=cap.cookies['JSESSIONID']
         headers["Cookie"] = "JSESSIONID="+str(cookiee)
     
