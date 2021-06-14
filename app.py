@@ -54,7 +54,7 @@ def Result():
         cap=requests.get(captcha_url)
         captcha = pytesseract.image_to_string(Image.open(io.BytesIO(cap.content)))
         print(cap)
-        cookiee=captcha.cookies['JSESSIONID']
+        cookiee=cap.cookies['JSESSIONID']
         headers["Cookie"] = "JSESSIONID="+str(cookiee)
     
 
