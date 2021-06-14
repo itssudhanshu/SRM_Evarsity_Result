@@ -1,42 +1,4 @@
-try:
-    from PIL import Image
-except ImportError:
-    import Image
-# import io
-# import pytesseract
-# import time
-# import requests
 from bs4 import BeautifulSoup
-
-# pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-# pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-# pytesseract.pytesseract.tesseract_cmd = '/app/vendor/tesseract-ocr/bin/tesseract'
-
-# captcha_url="https://evarsity.srmist.edu.in/srmwebonline/Captcha"
-# name=int(round(time.time() * 1000))   
-
-
-# def ocr_core(filename):
-#     """
-#     This function will handle the core OCR processing of images.
-#     """
-#     # pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-#     text = pytesseract.image_to_string(Image.open(filename))  # We'll use Pillow's Image class to open the image and pytesseract to detect the string in the image
-#     # text = guess_captcha(filename)
-
-#     return text
-
-
-# def getCaptcha():
-#     captcha=requests.get(captcha_url)
-#     # with open(UPLOAD_FOLDER+str(name)+'.jpg', 'wb') as test:
-#     #     test.write(captcha.content)
-#     # cap=ocr_core(UPLOAD_FOLDER +str(name)+'.jpg')
-#     cap = ocr_core(io.BytesIO(captcha.content))
-#     print(cap)
-#     cook=captcha.cookies['JSESSIONID']
-#     del captcha
-#     return cook,cap
 
 def genfrmDate(date,month,year):
     month=str(month).zfill(2)
